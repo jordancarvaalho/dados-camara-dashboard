@@ -1,0 +1,28 @@
+.overview-card,
+.placeholder-section,
+.parties-section,
+.deputies-section {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.overview-card .questao-one {
+  padding-top: 0;
+}
+
+.placeholder-section p {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .overview-card,
+  .placeholder-section,
+  .parties-section,
+  .deputies-section {
+    padding: 16px;
+  }
+}

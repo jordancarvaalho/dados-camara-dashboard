@@ -1,0 +1,578 @@
+.cost-ranking {
+  display: grid;
+  gap: 20px;
+}
+
+.cost-ranking-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 24px;
+}
+
+.cost-ranking-header > div:first-child > span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cost-ranking-header h2 {
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.cost-ranking-header p {
+  max-width: 760px;
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cost-ranking-formula {
+  min-width: 230px;
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+  border: 1px solid #cad8d0;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #f5faf7, #edf5f0);
+}
+
+.cost-ranking-formula span,
+.cost-ranking-formula small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.cost-ranking-formula strong {
+  color: var(--text-strong);
+  font-size: 14px;
+}
+
+.cost-ranking-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.cost-ranking-kpi {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-muted);
+}
+
+.cost-ranking-kpi span,
+.cost-ranking-kpi small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cost-ranking-kpi span {
+  text-transform: uppercase;
+}
+
+.cost-ranking-kpi strong {
+  color: var(--text-strong);
+  font-size: 21px;
+}
+
+.cost-ranking-filters {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(4, minmax(120px, 1fr));
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface-muted);
+}
+
+.cost-ranking-filters label {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+}
+
+.cost-ranking-filters label > span {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.cost-ranking-filters input,
+.cost-ranking-filters select {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 0 10px;
+  color: var(--text-strong);
+  background: #ffffff;
+}
+
+.cost-ranking-refresh {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  text-align: right;
+}
+
+.cost-ranking-loading {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+}
+
+.cost-ranking-dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(330px, 0.55fr);
+  align-items: start;
+  gap: 12px;
+}
+
+.cost-ranking-list-card,
+.cost-ranking-detail {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.cost-ranking-list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cost-ranking-list-heading > div:first-child {
+  display: grid;
+  gap: 2px;
+}
+
+.cost-ranking-list-heading strong {
+  color: var(--text-strong);
+}
+
+.cost-ranking-list-heading span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.cost-ranking-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 5px;
+}
+
+.cost-ranking-legend span {
+  border-radius: 999px;
+  padding: 4px 7px;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.cost-ranking-legend .excellent {
+  background: #247553;
+}
+
+.cost-ranking-legend .regular {
+  background: #a7a34b;
+}
+
+.cost-ranking-legend .low {
+  background: #b5443e;
+}
+
+.cost-ranking-list {
+  max-height: 1500px;
+  overflow-y: auto;
+}
+
+.cost-ranking-row {
+  width: 100%;
+  min-height: 62px;
+  display: grid;
+  grid-template-columns:
+    46px 38px minmax(125px, 1.45fr) minmax(72px, 0.65fr)
+    minmax(88px, 0.8fr) minmax(70px, 0.6fr) minmax(90px, 0.75fr);
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-left: 4px solid transparent;
+  border-bottom: 1px solid #edf0ec;
+  padding: 8px 10px 8px 7px;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.cost-ranking-row:hover,
+.cost-ranking-row.active {
+  border-left-color: var(--rank-color);
+  background: color-mix(in srgb, var(--rank-color) 7%, #ffffff);
+}
+
+.cost-rank-position {
+  color: var(--rank-color);
+  font-size: 12px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.cost-rank-avatar {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 2px solid color-mix(in srgb, var(--rank-color) 40%, #ffffff);
+  border-radius: 50%;
+  color: var(--rank-color);
+  background: color-mix(in srgb, var(--rank-color) 10%, #ffffff);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.cost-rank-avatar.large {
+  width: 68px;
+  height: 82px;
+  border-radius: 9px;
+}
+
+.cost-rank-avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.cost-rank-identity,
+.cost-rank-indicator,
+.cost-rank-score {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.cost-rank-identity strong,
+.cost-rank-indicator strong,
+.cost-rank-score strong {
+  overflow: hidden;
+  color: var(--text-strong);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cost-rank-identity small,
+.cost-rank-indicator small,
+.cost-rank-score small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cost-rank-score {
+  text-align: right;
+}
+
+.cost-rank-score strong {
+  color: var(--rank-color);
+  font-size: 14px;
+}
+
+.cost-ranking-detail {
+  position: sticky;
+  top: 12px;
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-top: 5px solid var(--rank-color);
+}
+
+.cost-detail-heading {
+  display: grid;
+  grid-template-columns: 68px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+}
+
+.cost-detail-heading > div {
+  min-width: 0;
+  padding-top: 3px;
+}
+
+.cost-detail-heading span {
+  color: var(--rank-color);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.cost-detail-heading h3 {
+  margin-top: 4px;
+  color: var(--text-strong);
+  font-size: 20px;
+  overflow-wrap: anywhere;
+}
+
+.cost-detail-heading small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.cost-detail-score {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--rank-color) 8%, #ffffff);
+}
+
+.cost-detail-score span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.cost-detail-score strong {
+  color: var(--rank-color);
+  font-size: 28px;
+}
+
+.cost-base-warning {
+  padding: 9px 10px;
+  border: 1px solid #ead5af;
+  border-radius: 7px;
+  color: #79531e;
+  background: #fff8e9;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.cost-detail-benefit {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.cost-detail-benefit > div,
+.cost-detail-kpis > div {
+  display: grid;
+  gap: 3px;
+  padding: 9px;
+  border-radius: 7px;
+  background: #f8faf7;
+}
+
+.cost-detail-benefit span,
+.cost-detail-kpis dt {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.cost-detail-benefit strong,
+.cost-detail-kpis dd {
+  color: var(--text-strong);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.cost-detail-kpis {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+.cost-detail-kpis dd,
+.cost-presence-detail dd {
+  margin: 0;
+}
+
+.cost-presence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.cost-presence-detail {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.cost-presence-detail > div {
+  display: grid;
+  gap: 2px;
+}
+
+.cost-presence-detail > div span,
+.cost-presence-detail dt {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.cost-presence-detail > div strong {
+  color: var(--rank-color);
+  font-size: 20px;
+}
+
+.cost-presence-detail dl {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+}
+
+.cost-presence-detail dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.cost-presence-detail dd {
+  color: var(--text-strong);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.cost-ranking-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.cost-ranking-pagination button {
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 0 14px;
+  color: var(--text-strong);
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.cost-ranking-pagination button:hover:not(:disabled) {
+  color: #ffffff;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.cost-ranking-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.cost-ranking-pagination span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.cost-ranking-methodology {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 12px 14px;
+  background: #fafbf9;
+}
+
+.cost-ranking-methodology summary {
+  color: var(--text-strong);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.cost-ranking-methodology p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+@media (max-width: 980px) {
+  .cost-ranking-header,
+  .cost-ranking-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .cost-ranking-formula {
+    min-width: 0;
+  }
+
+  .cost-ranking-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cost-ranking-detail {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .cost-ranking-kpis,
+  .cost-ranking-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .cost-ranking-list-heading {
+    display: grid;
+  }
+
+  .cost-ranking-legend {
+    justify-content: start;
+  }
+
+  .cost-ranking-row {
+    grid-template-columns: 42px 36px minmax(0, 1fr) 88px;
+  }
+
+  .cost-rank-indicator {
+    grid-column: 3;
+  }
+
+  .cost-rank-score {
+    grid-column: 4;
+    grid-row: 1 / span 4;
+  }
+
+  .cost-detail-benefit,
+  .cost-detail-kpis,
+  .cost-presence-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cost-ranking-pagination {
+    justify-content: space-between;
+    gap: 6px;
+  }
+}

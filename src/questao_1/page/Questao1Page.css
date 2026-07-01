@@ -1,0 +1,318 @@
+.questao-one {
+  display: grid;
+  gap: 18px;
+  padding-top: 18px;
+}
+
+.questao-one-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.questao-one-header p {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.filters-panel {
+  display: grid;
+  grid-template-columns:
+    minmax(150px, 0.9fr)
+    minmax(220px, 1.2fr)
+    repeat(4, minmax(130px, 170px));
+  align-items: end;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.92)),
+    var(--surface-muted);
+}
+
+.filters-panel-title {
+  display: grid;
+  gap: 4px;
+}
+
+.filters-panel-title strong {
+  color: var(--text-strong);
+  font-size: 17px;
+}
+
+.filters-panel-title span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.filters-panel label {
+  display: grid;
+  gap: 6px;
+}
+
+.filters-panel label span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.filters-panel select {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 34px 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--text-strong);
+  background-color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.search-input {
+  position: relative;
+}
+
+.search-input svg {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  width: 18px;
+  height: 18px;
+  fill: var(--muted);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.search-input input {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 10px 0 36px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--text-strong);
+  background-color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+}
+
+.search-input input::placeholder {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.filters-panel select:focus-visible,
+.search-input input:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.order-control {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-muted);
+}
+
+.order-control button,
+.pagination button {
+  min-height: 38px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--text-strong);
+  background: transparent;
+  cursor: pointer;
+}
+
+.order-control button {
+  padding: 0 12px;
+  font-weight: 700;
+}
+
+.order-control button.active {
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.order-control button:focus-visible,
+.pagination button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.deputados-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.deputado-item {
+  display: block;
+}
+
+.deputado-item-button {
+  width: 100%;
+  min-height: 86px;
+  display: grid;
+  grid-template-columns: 42px 54px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: inherit;
+  background: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.deputado-item-button:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.deputado-item-button.selected {
+  border-color: var(--accent);
+  box-shadow: inset 4px 0 0 var(--accent);
+}
+
+.deputado-item-button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.deputado-rank {
+  color: var(--warning);
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.deputado-photo {
+  width: 54px;
+  height: 64px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: var(--surface-muted);
+}
+
+.deputado-main {
+  min-width: 0;
+}
+
+.deputado-main h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.deputado-main p,
+.deputado-values span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.deputado-values {
+  display: grid;
+  gap: 4px;
+  justify-items: end;
+  text-align: right;
+}
+
+.deputado-values strong {
+  color: var(--text-strong);
+  font-size: 18px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 12px;
+}
+
+.pagination button {
+  padding: 0 14px;
+  background: var(--accent-soft);
+  font-weight: 700;
+}
+
+.pagination button:not(:disabled):hover {
+  color: #ffffff;
+  background: var(--accent-strong);
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.status-box {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  background: var(--surface-muted);
+}
+
+.status-box.error {
+  border-color: rgba(163, 58, 50, 0.4);
+  color: var(--danger);
+  background: rgba(163, 58, 50, 0.08);
+}
+
+@media (max-width: 1100px) {
+  .filters-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filters-panel-title {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .questao-one-header {
+    display: grid;
+  }
+
+  .filters-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .order-control {
+    width: 100%;
+  }
+
+  .order-control button {
+    flex: 1 1 0;
+  }
+
+  .deputado-item-button {
+    grid-template-columns: 34px 50px minmax(0, 1fr);
+  }
+
+  .deputado-values {
+    grid-column: 2 / -1;
+    justify-items: start;
+    text-align: left;
+  }
+
+  .pagination {
+    justify-content: space-between;
+  }
+}
