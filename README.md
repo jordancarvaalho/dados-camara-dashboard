@@ -1,7 +1,8 @@
-# Visualização estática da Câmara dos Deputados
+# Visualização da Câmara dos Deputados
 
-O frontend é uma aplicação React/Vite totalmente estática. Em produção, ele
-não abre conexões com PostgreSQL e não executa um servidor Express. Todos os
+Análise dos dados das Câmaras dos deputados, sendo detalhado diversos eixos, tanto por deputados, por partidos, etc.
+
+O frontend é uma aplicação React/Vite totalmente estática. Em produção, todos os
 resultados analíticos são lidos de arquivos JSON em `public/data`.
 
 ## Estrutura dos dados
